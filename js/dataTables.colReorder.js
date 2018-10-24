@@ -1006,20 +1006,20 @@ $.extend( ColReorder.prototype, {
 		/* Based on the current mouse position, calculate where the insert should go */
 		var target;
 		var lastToIndex = this.s.mouse.toIndex;
-        var cursorXPosiotion = this._fnCursorPosition(e, 'pageX');
+        var cursorXPosition = this._fnCursorPosition(e, 'pageX');
 
         for (var i = 1; i < this.s.aoTargets.length; i++) {
             var prevTarget = this.s.aoTargets[i - 1];
             var prevTargetMiddle = prevTarget.x + (this.s.aoTargets[i].x - prevTarget.x) / 2;
 
             if (this._fnIsLtr()) {
-                if (cursorXPosiotion < prevTargetMiddle ) {
+                if (cursorXPosition < prevTargetMiddle ) {
                     target = prevTarget;
                     break;
                 }
             }
             else {
-                if (cursorXPosiotion > prevTargetMiddle) {
+                if (cursorXPosition > prevTargetMiddle) {
                     target = prevTarget;
                     break;
                 }
